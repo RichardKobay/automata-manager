@@ -1,7 +1,7 @@
 # regex.py
 
 from typing import Any
-from nfa_e import NFAE
+from models.nfa_e import NFAE
 
 class RegularExpression:
     """

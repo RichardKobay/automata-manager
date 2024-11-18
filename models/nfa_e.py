@@ -1,8 +1,8 @@
 # nfa_e.py
 
-from automata_base import AutomatonBase
-from nfa import NFA
-from dfa import DFA
+from models.automata_base import AutomatonBase
+from models.nfa import NFA
+from models.dfa import DFA
 
 class NFAE(AutomatonBase):
     """

@@ -1,6 +1,6 @@
 # nfa.py
 
-from automata_base import AutomatonBase
+from models.automata_base import AutomatonBase
 
 class NFA(AutomatonBase):
     """
@@ -21,15 +21,20 @@ class NFA(AutomatonBase):
         :return: True if the string is accepted, False otherwise.
         """
         current_states = {self.start_state}
+        print(f"Initial state: {current_states}")
 
         for symbol in input_string:
+            print(f"Processing symbol: {symbol}")
             if symbol not in self.alphabet:
                 raise ValueError(f"Symbol '{symbol}' not in NFA alphabet.")
-            
+
             next_states = set()
             for state in current_states:
                 if symbol in self.transitions.get(state, {}):
                     next_states.update(self.transitions[state][symbol])
             current_states = next_states
+            print(f"Current states after '{symbol}': {current_states}")
 
-        return any(state in self.accept_states for state in current_states)
+        is_accepted = any(state in self.accept_states for state in current_states)
+        print(f"String accepted: {is_accepted}")
+        return is_accepted

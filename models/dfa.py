@@ -1,6 +1,6 @@
 # dfa.py
 
-from .automata_base import AutomatonBase
+from models.automata_base import AutomatonBase
 
 class DFA(AutomatonBase):
     """
